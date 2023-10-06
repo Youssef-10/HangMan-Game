@@ -1,0 +1,32 @@
+{
+  "People": {
+    "Messi": "The Gretest Player Of All Time",
+    "Ronaldo": "One OF The Gretest Player In History",
+    "Christian Bale": "Great Actor, One Of The Best",
+    "Osama Elzero": "Programmer, Great Person And Very Famous In the Middel East For His Teaching"
+  },
+  "Couturies": {
+    "USA": "Known for Its Military, Economy, Science, Education",
+    "Egypt": "Known for Hospitality, They Are Friendly",
+    "KSA": "Known For Their Wealth, Deserts",
+    "Germany": "Known For Their Cars, Economy, Greenlands"
+  },
+  "Programming": {
+    "JavaScript": "Programming Language Used In Web Development, Mobile Development",
+    "Python": "Programming Language Used In AI, Data Engineering",
+    "Flutter": "Programming Language Used In Mobile Applications For IOS And Android",
+    "Java": "Programming Language Used In Mobile Applications, Game Development"
+  },
+  "Movies": {
+    "Coco": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+    "The Prestige": "After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+    "Interstellar": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+    "Cast Away": "A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."
+  },
+  "TV-Shows": {
+    "Breaking Bad": "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future.",
+    "Dark": "A family saga with a supernatural twist, set in a German town where the disappearance of two young children exposes the relationships among four families.",
+    "Game Of Thrones": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for a millennia.",
+    "Prison Break": "A structural engineer installs himself in a prison he helped design, in order to save his falsely accused brother from a death sentence by breaking themselves out from the inside."
+  }
+}

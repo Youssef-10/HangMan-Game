@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --letter-color: #077b8a;
+  --main-color: #d72631;
+  --human-color: #222;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+body > .game {
+  width: 1000px;
+  margin: 20px auto;
+}
+/* Game-Over */
+.game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0000008c;
+  min-height: 117vh;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+  display: none;
+}
+.game-over > .text {
+  color: white;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 20px;
+}
+.game-over > p {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 30px;
+}
+.game-over > p > span {
+  font-weight: bold;
+  color: #ff7f11;
+}
+.game-over > button {
+  width: 200px;
+  height: 60px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background-color: white;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.game-over > button:hover {
+  background-color: black;
+  color: white;
+}
+/* WIN */
+.win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0000008c;
+  min-height: 117vh;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+  display: none;
+}
+.win > .text {
+  color: white;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 20px;
+}
+.win > button {
+  width: 200px;
+  height: 60px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background-color: white;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.win > button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Start Of Head */
+.game > .head {
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.game > .head .container > select {
+  width: 145px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--main-color);
+  cursor: pointer;
+}
+.game > .head .container > label {
+  font-size: 18px;
+}
+/* End Of Head */
+/* Start Of Main */
+.main {
+  background-color: #eee;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 365px;
+}
+.main > .hangman-image {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.main > .hangman-image > .human {
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+
+.main > .hangman-image > .stand {
+  width: 100px;
+  height: 5px;
+  background-color: var(--human-color);
+  position: absolute;
+  left: 80px;
+  bottom: 80px;
+}
+.main > .hangman-image > .stand::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 50px;
+  left: 62px;
+  bottom: -4px;
+  background-color: var(--human-color);
+  transform: rotate(-45deg);
+}
+.main > .hangman-image > .stand::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 50px;
+  background-color: var(--human-color);
+  transform: rotate(45deg);
+  top: -250px;
+  left: 63px;
+}
+.main > .hangman-image > .left {
+  width: 5px;
+  height: 250px;
+  background: var(--human-color);
+  position: absolute;
+  left: 125px;
+  bottom: 80px;
+}
+.main > .hangman-image > .left::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 200px;
+  background-color: var(--human-color);
+  left: 99px;
+  transform: rotate(90deg);
+  top: -98px;
+}
+.main > .hangman-image > .left::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 50px;
+  background-color: var(--human-color);
+  left: 197px;
+}
+
+.main > .hangman-image > .human > {
+  position: relative;
+}
+.main > .hangman-image > .human.mistake-1 .head {
+  display: block;
+}
+.main > .hangman-image > .human.mistake-2 .body {
+  display: block;
+}
+.main > .hangman-image > .human.mistake-3 .right-arm {
+  display: block;
+}
+.main > .hangman-image > .human.mistake-4 .left-arm {
+  display: block;
+}
+.main > .hangman-image > .human.mistake-5 .right-leg {
+  display: block;
+}
+.main > .hangman-image > .human.mistake-6 .left-leg {
+  display: block;
+}
+.main > .hangman-image > .human > .head {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 5px solid var(--human-color);
+  border-radius: 50%;
+  top: 99px;
+  left: 289px;
+  display: none;
+}
+.main > .hangman-image > .human > .body {
+  position: absolute;
+  width: 5px;
+  height: 80px;
+  background-color: var(--human-color);
+  left: 322px;
+  top: 164px;
+  display: none;
+}
+.main > .hangman-image > .human > .left-arm {
+  position: absolute;
+  width: 5px;
+  height: 60px;
+  background-color: var(--human-color);
+  transform: rotate(45deg);
+  left: 300px;
+  top: 174px;
+  display: none;
+}
+.main > .hangman-image > .human > .right-arm {
+  position: absolute;
+  width: 5px;
+  height: 60px;
+  background-color: var(--human-color);
+  transform: rotate(-45deg);
+  left: 343px;
+  top: 174px;
+  display: none;
+}
+.main > .hangman-image > .human > .right-leg {
+  position: absolute;
+  width: 5px;
+  height: 70px;
+  background-color: var(--human-color);
+  transform: rotate(-45deg);
+  left: 347px;
+  top: 232px;
+  display: none;
+}
+.main > .hangman-image > .human > .left-leg {
+  position: absolute;
+  width: 5px;
+  height: 70px;
+  background-color: var(--human-color);
+  transform: rotate(45deg);
+  left: 296px;
+  top: 233px;
+  display: none;
+}
+.main > .letters {
+  height: 100%;
+  flex: 1;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main > .letters > .letters-box > .letter {
+  background-color: var(--letter-color);
+  color: white;
+  display: inline-block;
+  width: 55px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  line-height: 52px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.main > .letters > .letters-box > .letter.clicked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.main > .letters > .letters-box > .letter:nth-child(7),
+.main > .letters > .letters-box > .letter:nth-child(14),
+.main > .letters > .letters-box > .letter:nth-child(21),
+.main > .letters > .letters-box > .letter:nth-child(26) {
+  margin-right: 0;
+}
+.main > .letters > .letters-box > .letter:nth-child(22),
+.main > .letters > .letters-box > .letter:nth-child(23),
+.main > .letters > .letters-box > .letter:nth-child(24),
+.main > .letters > .letters-box > .letter:nth-child(25),
+.main > .letters > .letters-box > .letter:nth-child(26),
+.main > .letters > .letters-box > .letter:nth-child(27) {
+  margin-bottom: 0;
+}
+
+/* End Of Main */
+/* Start Of Hint */
+.hint {
+  background-color: #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none;
+  transition: 1s;
+}
+.hint-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hint-container > span {
+  background-color: white;
+  height: 50px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 50px;
+  color: var(--main-color);
+  position: relative;
+}
+.hint-container > p {
+  margin: auto;
+}
+
+.hint-container > span::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--main-color);
+  right: -45px;
+}
+/* End Of Hint */
+/* Start Of Footer */
+.footer {
+  background-color: #eee;
+  display: none;
+  transition: 1s;
+}
+.footer > .word-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.footer > .word-container > .letter {
+  background-color: #fff;
+  margin-right: 20px;
+  min-width: 40px;
+  min-height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  border-bottom: 2px solid #222;
+}
+/* End Of Footer */

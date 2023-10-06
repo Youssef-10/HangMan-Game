@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HangMan</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="game">
+      <!-- Start Of Head -->
+      <div class="head">
+        <h2>HangMan</h2>
+        <div class="container">
+          <label for="subject">Choose The Subject:</label>
+          <select name="subject" id="subject">
+            <option value="">-------</option>
+          </select>
+        </div>
+      </div>
+      <!-- End Of Head -->
+      <!-- Start Of Main -->
+      <div class="main">
+        <div class="hangman-image">
+          <div class="stand"></div>
+          <div class="left"></div>
+          <div class="human">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="right-arm"></div>
+            <div class="left-arm"></div>
+            <div class="right-leg"></div>
+            <div class="left-leg"></div>
+          </div>
+        </div>
+        <div class="letters">
+          <div class="letters-box"></div>
+        </div>
+      </div>
+      <!-- End Of Main -->
+      <!-- Start Of Hint -->
+      <div class="hint">
+        <div class="hint-container">
+          <span>Hint</span>
+          <p id="hint"></p>
+        </div>
+      </div>
+      <!-- End Of Hint -->
+      <!-- Start Of Footer -->
+      <div class="footer">
+        <div class="word-container"></div>
+      </div>
+      <!-- End Of Footer -->
+      <audio id="success" src="sounds/success.mp3" preload="auto"></audio>
+      <audio id="fail" src="sounds/wrong-answer.mp3" preload="auto"></audio>
+      <audio id="won" src="sounds/won.mp3" preload="auto"></audio>
+      <audio id="lose" src="sounds/lose.mp3" preload="auto"></audio>
+    </div>
+  </body>
+</html>
+<!-- Christian Bale -->
